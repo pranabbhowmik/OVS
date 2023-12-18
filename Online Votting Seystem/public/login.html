@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Online Voting System</title>
+</head>
+
+<body class=" h-screen bg-gradient-to-r from-tuku-300 via-white to-green-700">
+    <nav>
+        <img src="/img/E.png" class="lg:w-36  sm:w-28 lg:h-24">
+        <p
+            class="lg:text-3xl  animate__animated animate__fadeInDown font-bold  lg:ml-62 sm:ml-24 sm:-mt-14 lg:-mt-16 sm:text-xl">
+            <span class="text-tuku-300">ONLINE </span> <span class="text-gray-400">VOTING</span> <span
+                class="text-green-700">SYSTEM</span>
+        </p>
+
+    </nav>
+    <section>
+        <form id="login-form">
+            <div
+                class="bg-transparent lg:ml-13 mt-20 rounded-lg animate__animated animate__bounceInUp shadow-lg sm:ml-14 sm:w-66 sm:h-80 lg:w-80 lg:h-85">
+                <h1 class="text-xl font-bold  text-gray-400 text-center">Log In</h1>
+                <div class="flex flex-col gap-2 w-[90%] max-auto">
+                    <label class="text-lg ml-6 lg:mt-9 sm:mt-3 font-semibold text-left text-gray-500" for="">Voter
+                        Id</label>
+                    <input
+                        class="outline-none ml-5 px-4 py-2 rounded-full bg-transparent border-2 border-gray-500 text-black"
+                        placeholder="Voter Id" type="text" name="voter">
+                </div>
+                <div class="flex flex-col gap-2 w-[90%] max-auto">
+                    <label class="text-lg ml-6 lg:mt-5 sm:mt-3 font-semibold text-left text-gray-500" for="">Aadhar
+                        Id</label>
+                    <input
+                        class="outline-none ml-5 px-4 py-2 rounded-full bg-transparent border-2 border-gray-500 text-black"
+                        placeholder="Aadhar Id" type="text" name="aadhar">
+                    <a href="/" class="lg:ml-28 sm:ml-24 text-gray-500 font-semibold cursor-pointer">New
+                        Voter ?</a>
+                </div>
+                <button id="btn-login"
+                    class="px-4 py-2 rounded-xl text-xl w-[150px] lg:ml-20 sm:ml-14 mt-2 cursor-pointer bg-transparent shadow-2xl border-2 text-gray-400 font-semibold">Enter</button>
+            </div>
+        </form>
+
+    </section>
+
+    <script>
+        const loginForm = document.getElementById("login-form");
+
+        loginForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+
+            // Get the form data
+            const formData = new FormData(loginForm);
+
+            // Convert the form data to a JSON object
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            // Make an HTTP POST request backend API
+            fetch("/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            })
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    return response.json();
+                })
+                .then((responseData) => {
+                    // Handle the response from the backend
+                    console.log("Response from server:", responseData);
+                    localStorage.setItem('userData', JSON.stringify(responseData.candidate))
+                    window.location.href = "http://localhost:3000/image"
+
+                })
+                .catch((error) => {
+                    alert('please login with valid id ')
+                    console.error("Error:", error);
+
+                });
+        });
+
+    </script>
+
+
+</body>
+
+</html>

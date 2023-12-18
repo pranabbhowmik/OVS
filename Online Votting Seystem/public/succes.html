@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Online Voting System</title>
+</head>
+
+<body class=" h-screen bg-gradient-to-r from-tuku-300 via-white to-green-700">
+
+    <img src="/img/tik.png" class="w-24 lg:ml-69 lg:mt-20 flex">
+    <div class="text-3xl font-mono font-extrabold w-100 lg:mt-10 lg:ml-106 text-green-500 flex justify-center">YOU HAVE
+        SUCCESSFULLY DONE YOUR VOTE
+    </div>
+    <!-- <button id="en_btn"
+        class="px-4 py-2 rounded-xl text-xl w-[150px] lg:ml-63 sm:ml-14 mt-4 cursor-pointer bg-transparent shadow-2xl border-2 text-gray-400 font-semibold">Enter</button>
+ -->
+
+    <script src="/confetti.js"></script>
+    <script>
+        confetti.start();
+        document.getElementById("en_btn").addEventListener("click", function () {
+            window.close();
+        });
+    </script>
+</body>
+
+</html>

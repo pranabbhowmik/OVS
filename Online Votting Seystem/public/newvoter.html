@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        /* Custom CSS for bounce-down animation */
+        .animate-bounce-down {
+            animation: bounce-down 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
+        }
+
+        @keyframes bounce-down {
+            0% {
+                transform: translateY(-200px);
+                opacity: 0;
+            }
+
+            70% {
+                transform: translateY(10px);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <title>Online Voting System</title>
+</head>
+
+<body>
+    <nav>
+        <img src="/img/E.png" class="lg:w-36  sm:w-28 lg:h-24">
+        <p class="lg:text-3xl uppercase font-bold  lg:ml-62 sm:ml-28 text-tuku-300 sm:-mt-14 lg:-mt-16 sm:text-xl ">
+            Registration Form</p>
+    </nav>
+    <!-- alert box -->
+    <div id="Modal" class="modal absolute  inset-0 flex hidden items-center justify-center z-50 ">
+        <div
+            class="modal-content w-1/3 bg-gradient-to-r from-tuku-300 via-white to-green-700 rounded-xl shadow-lg p-6 animate-bounce-down">
+            <h2 class="text-xl font-semibold">Do you want to vote for this candidate?</h2>
+            <div class="mt-4 flex justify-end">
+                <button id="cancel" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <form id="new-voter" enctype="multipart/form-data">
+        <div class="mb-4 lg:ml-44 sm:ml-7">
+            <label for="name" class="block text-gray-600 mt-14 ml-5 font-medium">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter Your Name"
+                class="lg:w-[500px] sm:w-72 ml-5 px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-blue-500"
+                required>
+        </div>
+        <div class="mb-4 lg:ml-44 sm:ml-7">
+            <label for="father_husband_name" class="block text-gray-600 font-medium">
+                <select id="gender" name="gardain"
+                    class="w-28 sm:ml-5  px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-blue-500"
+                    required>
+                    <option value="Father">Father</option>
+                    <option value="Husband">Husband</option>
+                </select>
+            </label>
+            <input type="text" id="father_husband_name" placeholder="Enter Your Father/Husband Name" name="gardain_name"
+                class="lg:w-[500px] sm:w-72 ml-5 mt-2 px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-blue-500"
+                required>
+        </div>
+        <div class="mb-4 lg:ml-44 sm:ml-7">
+            <label for="voter_id" class="block ml-5 text-gray-600 font-medium">Voter ID</label>
+            <input type="text" id="voter_id" name="voter_id" placeholder="Enter Your Voter Id"
+                class="lg:w-[500px] sm:w-72 ml-5 mt-2 px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-blue-500"
+                required>
+        </div>
+        <div class="mb-4 lg:ml-44 sm:ml-7">
+            <label for="aadhar_id" class="block ml-5 text-gray-600 font-medium">Aadhar ID</label>
+            <input type="text" id="aadhar_id" name="aadhar_id" placeholder="Enter Your Aadhar Id"
+                class="lg:w-[500px] sm:w-72 ml-5 mt-2 px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-blue-500"
+                required>
+        </div>
+        <div class="mb-4 sm:ml-7 lg:ml-50 lg:absolute lg:-mt-88">
+            <label for="village" class="block sm:ml-5 text-gray-600 font-medium">Village</label>
+            <input type="text" id="village" name="village" placeholder="Enter Your Village Name"
+                class="lg:w-[500px] sm:w-72 ml-5 mt-2 px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-blue-500"
+                required>
+        </div>
+        <div class="mb-4 sm:ml-7 lg:ml-50 lg:absolute lg:-mt-25">
+            <label for="post" class="block sm:ml-5 text-gray-600 font-medium">Block</label>
+            <input type="text" id="post" name="block" placeholder="Enter Your Block Name"
+                class="lg:w-[500px] sm:w-72 ml-5 mt-2 px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-blue-500"
+                required>
+        </div>
+        <div class="mb-4 sm:ml-7 lg:ml-50 lg:absolute lg:-mt-24">
+            <label for="post" class="block sm:ml-5 text-gray-600 font-medium">Police Station</label>
+            <input type="text" id="post" name="Police_station" placeholder="Enter Your Police Station Name"
+                class="lg:w-[500px] sm:w-72 ml-5 mt-2 px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-blue-500"
+                required>
+        </div>
+        <div class="mb-4 sm:ml-7 lg:ml-50 lg:absolute lg:-mt-45">
+            <label for="district" class="block text-gray-600 sm:ml-5 font-medium">District</label>
+            <input type="text" id="district" name="district" placeholder="Enter Your District Name"
+                class="lg:w-[500px] sm:w-72 ml-5 mt-2 px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-blue-500"
+                required>
+        </div>
+        <div class="mb-4 sm:ml-7 lg:ml-50 lg:absolute ">
+            <label for="pin_code" class="block text-gray-600  sm:ml-5 font-medium">Pin Code</label>
+            <input type="text" id="pin_code" name="pin_code" placeholder="Enter Your Pin Code"
+                class="lg:w-[500px] sm:w-72 ml-5 mt-2 px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-blue-500"
+                required>
+        </div>
+        <div class="mb-4 ">
+            <label for="booth_no" class="block text-gray-600  sm:ml-11 lg:ml-48 font-medium">Booth No</label>
+            <input type="text" id="booth_no" name="booth_no" placeholder="Enter Your Booth No"
+                class="lg:w-[500px] lg:ml-48  sm:w-72 sm:ml-11 mt-2 px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-blue-500"
+                required>
+        </div>
+        <div class="mb-4">
+            <label for="gender" class="block text-gray-600 lg:ml-48 sm:ml-11 font-medium">Gender</label>
+            <select id="gender" name="gender"
+                class="lg:w-[250px] lg:ml-48 sm:w-72 sm:ml-11  mt-2 px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="mb-4  sm:ml-7 lg:ml-50 lg:-mt-24 lg:absolute">
+            <label for="image" class="block text-gray-600 ml-6 font-medium">Capture Image</label>
+            <input type="file" id="image" name="image" accept="image/*" capture="camera"
+                class="lg:w-[500px] sm:w-72 ml-5 mt-2 px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                required>
+        </div>
+        <div class="mb-6">
+            <button type="submit" id="Reg_btn"
+                class="lg:w-[150px] lg:ml-19  sm:w-72 sm:ml-12 mt-5 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+                onclick="reg()">Register</button>
+            <a href="/login">
+                <div class="lg:w-[150px] lg:ml-55  sm:w-72 sm:ml-12 -mt-10 flex bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+                    onclick="reg()">Already Register</div>
+            </a>
+        </div>
+    </form>
+
+    <script>
+        document
+            .getElementById("new-voter")
+            .addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent the default form submission
+                sendData(event.target); // Call a function to send the data to the backend
+            });
+
+        async function sendData(form) {
+            const formData = new FormData(form);
+            const res = await fetch("/", {
+                method: "POST",
+                body: formData,
+            });
+            const data = await res.json();
+            alert('Your Registration has been Successful....');
+
+            setTimeout(() => {
+                window.location.href = "http://localhost:3000/login"
+            }, 300);
+
+
+        }
+
+
+        // const Reg_btn = document.getElementById("Reg_btn");
+        // const close = document.getElementById("cancel");
+        // const model = document.getElementById("model");
+        // const showModel = () => {
+        //     model.classList.remove("hidden");
+        // };
+        // const closeModel = () => {
+        //     model.classList.add("hidden");
+        // };
+        // Reg_btn.addEventListener("click", () => {
+        //     showModel();
+        // });
+        // close, addEventListener("click", () => {
+        //     closeModel();
+        // });
+
+    </script>
+
+</body>
+
+</html>

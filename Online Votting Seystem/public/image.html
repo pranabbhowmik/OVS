@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Online Voting System</title>
+  <script defer src="face-api.min.js"></script>
+  <script defer src="script.js"></script>
+  <style>
+    body {
+      background: linear-gradient(to right, rgb(246, 145, 54), #ffffff, #1B8342);
+      margin: 0;
+      padding: 0;
+      width: 500px;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    nav img {
+      width: 8rem;
+      position: absolute;
+      margin-top: -15rem;
+      margin-left: -15rem;
+      height: 6rem;
+    }
+
+    #btnStart {
+      padding: 1rem 2rem;
+      border-radius: 0.75rem;
+      font-size: 1.25rem;
+      width: 150px;
+      position: absolute;
+      margin-left: 50%;
+      margin-top: 40rem;
+      cursor: pointer;
+      background: transparent;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      border: 2px solid #9f9f9f;
+      color: #9f9f9f;
+      font-weight: bold;
+    }
+
+    #btnStart:hover {
+      background-color: #f18c12;
+      color: #ffffff;
+    }
+
+    button {
+      padding: 1rem 2rem;
+      border-radius: 0.75rem;
+      font-size: 1.25rem;
+      width: 150px;
+      position: absolute;
+      margin-left: 65%;
+      margin-top: 40rem;
+      cursor: pointer;
+      background: transparent;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      border: 2px solid #9f9f9f;
+      color: #9f9f9f;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #f18c12;
+      color: #ffffff;
+    }
+
+
+    nav p {
+      font-size: 1.8rem;
+      position: absolute;
+      margin-left: 20%;
+      margin-top: -14%;
+    }
+
+    .text-tuku-300 {
+      color: rgb(246, 145, 54);
+    }
+
+    .text-gray-400 {
+      color: #9CA3AF;
+    }
+
+    .text-green-700 {
+      color: #208546;
+    }
+
+
+    #video {
+      width: 24rem;
+      margin-top: 9.5rem;
+      position: absolute;
+      margin-left: 65%;
+      height: 18rem;
+      background: transparent;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      border-radius: 9999px;
+    }
+
+    canvas {
+      position: absolute;
+      margin-top: 9.52rem;
+      margin-left: 65%;
+      width: 24rem;
+      height: 18rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <img src="img/E.png">
+    <p>
+      <span class="text-tuku-300 text-3xl">FACE</span> <span class="text-gray-400 text-3xl">VERIFICATION</span> <span
+        class="text-green-700 text-3xl">SYSTEM</span>
+    </p>
+  </nav>
+  <video id="video" width="720" height="560" muted autoplay></video>
+
+  <!-- <button id="btnStart" onclick="StartCamera();">Click</button> -->
+
+  <button id="subha" onclick="download();">Done</button>
+</body>
+
+</html>
