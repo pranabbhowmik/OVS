@@ -53,7 +53,7 @@
     <form id="new-voter" enctype="multipart/form-data">
         <div class="mb-4 lg:ml-44 sm:ml-7">
             <label for="name" class="block text-gray-600 mt-14 ml-5 font-medium">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter Your Name"
+            <input type="text" id="name" name="name" placeholder="Enter Your Name" autocomplete="off"
                 class="lg:w-[500px] sm:w-72 ml-5 px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-blue-500"
                 required>
         </div>
@@ -66,37 +66,39 @@
                     <option value="Husband">Husband</option>
                 </select>
             </label>
-            <input type="text" id="father_husband_name" placeholder="Enter Your Father/Husband Name" name="gardain_name"
+            <input type="text" id="father_husband_name" placeholder="Enter Your Father/Husband Name" autocomplete="off"
+                name="gardain_name"
                 class="lg:w-[500px] sm:w-72 ml-5 mt-2 px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-blue-500"
                 required>
         </div>
         <div class="mb-4 lg:ml-44 sm:ml-7">
             <label for="voter_id" class="block ml-5 text-gray-600 font-medium">Voter ID</label>
-            <input type="text" id="voter_id" name="voter_id" placeholder="Enter Your Voter Id"
+            <input type="text" id="voter_id" name="voter_id" placeholder="Enter Your Voter Id" autocomplete="off"
                 class="lg:w-[500px] sm:w-72 ml-5 mt-2 px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-blue-500"
                 required>
         </div>
         <div class="mb-4 lg:ml-44 sm:ml-7">
             <label for="aadhar_id" class="block ml-5 text-gray-600 font-medium">Aadhar ID</label>
-            <input type="text" id="aadhar_id" name="aadhar_id" placeholder="Enter Your Aadhar Id"
+            <input type="text" id="aadhar_id" name="aadhar_id" placeholder="Enter Your Aadhar Id" autocomplete="off"
                 class="lg:w-[500px] sm:w-72 ml-5 mt-2 px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-blue-500"
                 required>
         </div>
         <div class="mb-4 sm:ml-7 lg:ml-50 lg:absolute lg:-mt-88">
             <label for="village" class="block sm:ml-5 text-gray-600 font-medium">Village</label>
-            <input type="text" id="village" name="village" placeholder="Enter Your Village Name"
+            <input type="text" id="village" name="village" placeholder="Enter Your Village Name" autocomplete="off"
                 class="lg:w-[500px] sm:w-72 ml-5 mt-2 px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-blue-500"
                 required>
         </div>
         <div class="mb-4 sm:ml-7 lg:ml-50 lg:absolute lg:-mt-25">
             <label for="post" class="block sm:ml-5 text-gray-600 font-medium">Block</label>
-            <input type="text" id="post" name="block" placeholder="Enter Your Block Name"
+            <input type="text" id="post" name="block" placeholder="Enter Your Block Name" autocomplete="off"
                 class="lg:w-[500px] sm:w-72 ml-5 mt-2 px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-blue-500"
                 required>
         </div>
         <div class="mb-4 sm:ml-7 lg:ml-50 lg:absolute lg:-mt-24">
             <label for="post" class="block sm:ml-5 text-gray-600 font-medium">Police Station</label>
             <input type="text" id="post" name="Police_station" placeholder="Enter Your Police Station Name"
+                autocomplete="off"
                 class="lg:w-[500px] sm:w-72 ml-5 mt-2 px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-blue-500"
                 required>
         </div>
@@ -104,19 +106,19 @@
             <label for="district" class="block text-gray-600 sm:ml-5 font-medium">District</label>
             <input type="text" id="district" name="district" placeholder="Enter Your District Name"
                 class="lg:w-[500px] sm:w-72 ml-5 mt-2 px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-blue-500"
-                required>
+                autocomplete="off" required>
         </div>
         <div class="mb-4 sm:ml-7 lg:ml-50 lg:absolute ">
             <label for="pin_code" class="block text-gray-600  sm:ml-5 font-medium">Pin Code</label>
             <input type="text" id="pin_code" name="pin_code" placeholder="Enter Your Pin Code"
                 class="lg:w-[500px] sm:w-72 ml-5 mt-2 px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-blue-500"
-                required>
+                autocomplete="off" required>
         </div>
         <div class="mb-4 ">
             <label for="booth_no" class="block text-gray-600  sm:ml-11 lg:ml-48 font-medium">Booth No</label>
             <input type="text" id="booth_no" name="booth_no" placeholder="Enter Your Booth No"
                 class="lg:w-[500px] lg:ml-48  sm:w-72 sm:ml-11 mt-2 px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-blue-500"
-                required>
+                autocomplete="off" required>
         </div>
         <div class="mb-4">
             <label for="gender" class="block text-gray-600 lg:ml-48 sm:ml-11 font-medium">Gender</label>
