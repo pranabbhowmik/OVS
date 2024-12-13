@@ -51,6 +51,6 @@ function download() {
 const doneBtn = document.getElementById('subha');
 doneBtn.addEventListener("click", () => {
   setTimeout(() => {
-    window.location.href = "http://localhost:3000/vote"
+    window.location.href = "https://online-votting-system.onrender.com/vote"
   }, 1000);
 })
